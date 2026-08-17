@@ -95,19 +95,25 @@ Open **http://127.0.0.1:8000** in your browser.
 
 **Purpose:** Identify performance degradation over three production months.
 
-**Outputs:**
-- `evidently_month1.html`, `month2.html`, `month3.html` — Interactive Evidently reports (data quality, feature drift)
+**Outputs (GitHub-committed):**
+- `drift_month1.md`, `drift_month2.md`, `drift_month3.md` — Lightweight markdown summaries (~30 KB each) with key metrics, alerts, and interpretation
 - `drift_trend_table.csv` — Month-over-month change in latency, token length, and feature distributions
 - `drift_alert_log.json` — Detected alerts (6 detected in baseline run) with severity and column
+
+**Outputs (local only, excluded from Git):**
+- `evidently_month1.html`, `month2.html`, `month3.html` — Full interactive Evidently reports (3.2 MB each) for detailed local analysis
+
+**Why markdown instead of HTML on GitHub?**
+The full Evidently HTML reports are comprehensive but too large for GitHub (3.2 MB → won't render). Markdown summaries capture all key findings in ~30 KB while remaining human-readable and Git-friendly. Run locally to explore the full interactive reports.
 
 **Simulation:**
 - Introduces realistic drift: latency creep (+15%/month), input token distribution shift, seasonal patterns
 - Generates ~1,000 records/month across model outputs and production logs
 
 **Interpretation:**
-- Green ✅ = Within expected range
-- Yellow ⚠️ = Minor degradation (monitor)
-- Red 🔴 = Significant drift (escalate, retrain)
+- 🟢 Green ✅ = Within expected range
+- 🟡 Yellow ⚠️ = Minor degradation (monitor)
+- 🔴 Red 🔴 = Significant drift (escalate, retrain)
 
 ### Phase 3: Cost Analysis (`/cost`)
 
@@ -187,10 +193,13 @@ afyaplus-capstone/
 │   └── quality_gate_log.txt
 ├── drift/
 │   ├── drift_simulation.py         # 3-month synthetic traffic generator
-│   ├── run_drift_pipeline.py       # Evidently integration (generates HTML)
+│   ├── run_drift_pipeline.py       # Evidently integration (generates markdown + local HTML)
 │   ├── drift_trend_table.csv
 │   ├── drift_alert_log.json
-│   ├── evidently_month1.html
+│   ├── drift_month1.md             # GitHub-friendly summary (30 KB)
+│   ├── drift_month2.md
+│   ├── drift_month3.md
+│   ├── evidently_month1.html       # Local only: full interactive reports (3.2 MB, .gitignore)
 │   ├── evidently_month2.html
 │   └── evidently_month3.html
 ├── cost/
@@ -367,5 +376,5 @@ scrape_configs:
    - `evaluation_rouge_l` (gauge)
    - `drift_alerts_detected` (counter)
    - `cost_monthly_usd` (gauge)
-- **Metrics explanation:** Check `dashboard/dashboard_instructions.md` for API details
-- **Drift reports:** Open `drift/evidently_month*.html` in a browser for interactive exploration
+
+
