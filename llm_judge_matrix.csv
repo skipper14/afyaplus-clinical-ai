@@ -1,0 +1,7 @@
+model,feature_type,mean_bleu,mean_rouge_l,mean_token_f1,mean_judge_overall,mean_judge_correctness
+gpt-4o,appointment_routing,0.5209,0.1482,0.278,2.8633,3.29
+gpt-4o,medication_guidance,0.304,0.1129,0.1692,2.6767,3.0767
+gpt-4o,symptom_triage,0.4821,0.1662,0.2805,2.9417,3.3783
+gpt-4o-mini,appointment_routing,0.463,0.1557,0.2671,2.8367,3.26
+gpt-4o-mini,medication_guidance,0.3168,0.0966,0.1938,2.7017,3.1067
+gpt-4o-mini,symptom_triage,0.4824,0.1574,0.2825,2.9417,3.38

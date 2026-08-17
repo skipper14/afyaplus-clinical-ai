@@ -1,0 +1,56 @@
+[
+  {
+    "month": "Month 2",
+    "metric": "input_token_length",
+    "baseline_mean": 844.4872,
+    "current_mean": 997.0208,
+    "delta_pct": 0.1806,
+    "severity": "high",
+    "rule": "mean shift > 8% vs baseline"
+  },
+  {
+    "month": "Month 2",
+    "metric": "latency_ms",
+    "baseline_mean": 1029.796,
+    "current_mean": 1197.7268,
+    "delta_pct": 0.1631,
+    "severity": "high",
+    "rule": "mean shift > 8% vs baseline"
+  },
+  {
+    "month": "Month 2",
+    "metric": "rouge_l",
+    "baseline_mean": 0.6821,
+    "current_mean": 0.6413,
+    "delta_pct": 0.0599,
+    "severity": "medium",
+    "rule": "mean shift > 8% vs baseline"
+  },
+  {
+    "month": "Month 3",
+    "metric": "input_token_length",
+    "baseline_mean": 844.4872,
+    "current_mean": 1150.7862,
+    "delta_pct": 0.3627,
+    "severity": "high",
+    "rule": "mean shift > 8% vs baseline"
+  },
+  {
+    "month": "Month 3",
+    "metric": "latency_ms",
+    "baseline_mean": 1029.796,
+    "current_mean": 1368.3431,
+    "delta_pct": 0.3288,
+    "severity": "high",
+    "rule": "mean shift > 8% vs baseline"
+  },
+  {
+    "month": "Month 3",
+    "metric": "rouge_l",
+    "baseline_mean": 0.6821,
+    "current_mean": 0.6011,
+    "delta_pct": 0.1188,
+    "severity": "medium",
+    "rule": "mean shift > 8% vs baseline"
+  }
+]

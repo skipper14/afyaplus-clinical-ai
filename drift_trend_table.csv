@@ -1,0 +1,4 @@
+month,mean_rouge_l,mean_latency_ms,mean_input_token_length
+Month 1,0.6821,1029.8,844.49
+Month 2,0.6413,1197.73,997.02
+Month 3,0.6011,1368.34,1150.79
